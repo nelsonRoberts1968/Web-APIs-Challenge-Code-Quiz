@@ -1,0 +1,74 @@
+
+body {
+    font-family:Helvetica, Arial, sans-serif;
+  }
+  .header {
+    margin: 100px auto 0 auto;
+    max-width: 600px;
+  }
+  
+  .hide-on-load {
+    display: none;
+  }
+  
+  #start-button{
+    text-align: center;
+  }
+  
+  
+  .response {
+    font-style: bold;
+    font-size: 120%;
+    margin-top: 20px;
+    padding-top: 10px;
+    color: gray;
+    border-top: 2px solid rgb(201, 193, 193);
+  }
+
+  .scores {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .timer-count {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  
+  button {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: purple;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    border: 0;
+    transition: background-color 0.1s;
+  }
+  /*Changing button color when mouse hovers over*/
+  button:hover {
+    background-color:#CBC3E3;
+  }
+  /* removes blue default blue color and Underline in a-tags*/
+  a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.1s;
+  }
+  
+  a:hover {
+    color: #CBC3E3;
+  }
+
+  /*Test input for the initial filed ..this will need to be improved*/
+  /*TODO- THIS WILL NEED TO BE IMPROVED*/
+  
+  input[type="text"] {
+    font-size: 100%;
+  }
+  
