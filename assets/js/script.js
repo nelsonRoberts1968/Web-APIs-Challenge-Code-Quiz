@@ -8,13 +8,14 @@ var timerEl = document.querySelector("#time");
 //Submit buttom button by ID next to the initials
 var submitBtn = document.querySelector("#submit-button");
 var choicesEl = document.querySelector("#choices");
+//Initials input field
 var initialsEl = document.querySelector("#initials-input");
 var feedbackEl = document.querySelector("#feedback");
 
 // Global variables for the Quiz Posisition of the question in an array
 
 var currentQuestionIndex = 0;
-var time = questions.length * 15;
+var time = questions.length * 25;
 var timerId;
 
 
@@ -44,7 +45,7 @@ function getQuestion() {
   var titleEl = document.getElementById("question-title");
   titleEl.textContent = currentQuestion.title;
 
-  // clear out any old question choices
+  // Set all aold choices back to an empty string
   choicesEl.innerHTML = "";
 
   // loop over choices
@@ -160,7 +161,7 @@ function checkInitialValues(event) {
 }
 
 // submit initials
-submitBtn.onclick = saveHighscore;
+submitBtn.onclick = saveScore;
 
 //Start Quiz function is envocked on button click
 startBtn.onclick = startQuiz;
