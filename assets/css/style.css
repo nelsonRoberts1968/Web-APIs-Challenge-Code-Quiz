@@ -6,6 +6,9 @@ body {
     margin: 100px auto 0 auto;
     max-width: 600px;
   }
+  .header h1{
+      color:purple;
+  }
   
   .hide-on-load {
     display: none;
@@ -67,7 +70,7 @@ body {
 
   /*Test input for the initial filed ..this will need to be improved*/
   /*TODO- THIS WILL NEED TO BE IMPROVED*/
-  
+
   input[type="text"] {
     font-size: 100%;
   }

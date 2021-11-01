@@ -1,5 +1,5 @@
 
-//Reading qiestions ID tag
+//Reading questions ID tag
 var questionsEl = document.querySelector("#questions");
 //Reading the time count in milliseconds linking the time ID
 var timerEl = document.querySelector("#time");
@@ -10,12 +10,12 @@ var submitBtn = document.querySelector("#submit-button");
 var choicesEl = document.querySelector("#choices");
 //Initials input field
 var initialsEl = document.querySelector("#initials-input");
-var feedbackEl = document.querySelector("#feedback");
+var responseEl = document.querySelector("#response");
 
 // Global variables for the Quiz Posisition of the question in an array
 
 var currentQuestionIndex = 0;
-var time = questions.length * 25;
+var time = questions.length * 15;
 var timerId;
 
 
@@ -28,11 +28,11 @@ function startQuiz() {
   // show starting time
   timerEl.textContent = time;
 
-  // un-hide questions section
+  // show question selction after button click
   questionsEl.removeAttribute("class");
 
-  // start timer in one second
-  timerId = setInterval(clockTick, 1000);
+  // start timer after one Second..This is from the initial countdown logic
+  timerId = setInterval(clockCountDown, 1000);
 
   getQuestion();
 }
@@ -48,9 +48,9 @@ function getQuestion() {
   // Set all aold choices back to an empty string
   choicesEl.innerHTML = "";
 
-  // loop over choices
+  // Look over available choices
   currentQuestion.choices.forEach(function(choice, i) {
-    // create new button for each choice
+    // create new button for each choice 
     var choiceNode = document.createElement("button");
     choiceNode.setAttribute("class", "choice");
     choiceNode.setAttribute("value", choice);
@@ -66,7 +66,7 @@ function getQuestion() {
 }
 
 function saveScore() {
-    // get value of input box
+    // Capture users iput initials
     var initials = initialsEl.value.trim();
   
     if (initials !== "") {
@@ -92,34 +92,34 @@ function saveScore() {
   }
 
 function questionClick() {
-  // check if user guessed wrong
+  // chec
   if (this.value !== questions[currentQuestionIndex].answer) {
-    // penalize time
-    time -= 15;
+
+    //adding 10 seconds everytime user gets a quastion wrong
+    time -= 10;
 
     if (time < 0) {
       time = 0;
     }
     // display new time on page
     timerEl.textContent = time;
-    feedbackEl.textContent = "Wrong Answer Try again!";
-    feedbackEl.style.color = "red";
+    responseEl.textContent = "Wrong Answer Try again!";
+    responseEl.style.color = "red";
   } else {
-    feedbackEl.textContent = "Correct!";
-    feedbackEl.style.color = "green";
-    feedbackEl.style.fontSize = "400%";
+    responseEl.textContent = "Correct!";
+    responseEl.style.color = "green";
   }
 
   // flash right/wrong feedback
-  feedbackEl.setAttribute("class", "feedback");
+  responseEl.setAttribute("class", "response");
   setTimeout(function() {
-    feedbackEl.setAttribute("class", "feedback hide");
+    responseEl.setAttribute("class", "hide response");
   }, 1000);
 
-  // next question
+  // Moves to the next question
   currentQuestionIndex++;
 
-  // time checker
+  // Check timer countdown
   if (currentQuestionIndex === questions.length) {
     quizCompleted();
   } else {
@@ -128,7 +128,7 @@ function questionClick() {
 }
 
 function quizCompleted() {
-  // stop timer
+  // stop countdown once quiz once completed
   clearInterval(timerId);
 
   // show end screen
@@ -139,11 +139,11 @@ function quizCompleted() {
   var finalScoreEl = document.getElementById("final-score");
   finalScoreEl.textContent = time;
 
-  // hide questions section
+  // Hide question options in the begining
   questionsEl.setAttribute("class", "hide");
 }
 
-function clockTick() {
+function clockCountDown() {
   // update time
   time--;
   timerEl.textContent = time;
@@ -159,12 +159,15 @@ function checkInitialValues(event) {
     saveScore();
   }
 }
-
-// submit initials
-submitBtn.onclick = saveScore;
-
-//Start Quiz function is envocked on button click
-startBtn.onclick = startQuiz;
-
 //User initials value assignment
 initialsEl.onkeyup = checkInitialValues;
+
+startBtn.onclick = startQuiz;
+// submit initials
+document.getElementById("submit-button").addEventListener("click",function(){
+    saveScore();
+})
+//Start Quiz function is envocked on button click
+document.getElementById("start-button").addEventListener("click", function(){
+    startQuiz();
+})
