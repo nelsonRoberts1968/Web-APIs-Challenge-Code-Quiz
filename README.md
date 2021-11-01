@@ -2,6 +2,7 @@
 ## Project Description
 UCD Bootacamp Individual Challenge 4.Creating a Code Quiz from the topics covered in class.\
 Being able to show multiple choice questions  with pre-assigned answers.\
+See acceptance criteria for the Challenge Below
 
 ## Acceptance Criteria
 
