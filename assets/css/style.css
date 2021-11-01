@@ -74,4 +74,7 @@ body {
   input[type="text"] {
     font-size: 100%;
   }
+  .choices button {
+    display: block;
+  }
   

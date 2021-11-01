@@ -5,11 +5,11 @@ var questionsEl = document.querySelector("#questions");
 var timerEl = document.querySelector("#time");
  //Start quiz button element lining it by its ID
  var startBtn = document.querySelector("#start-button");
+ //Initials input field
+var initialsEl = document.querySelector("#initials-input");
 //Submit buttom button by ID next to the initials
 var submitBtn = document.querySelector("#submit-button");
 var choicesEl = document.querySelector("#choices");
-//Initials input field
-var initialsEl = document.querySelector("#initials-input");
 var responseEl = document.querySelector("#response");
 
 // Global variables for the Quiz Posisition of the question in an array
@@ -92,7 +92,7 @@ function saveScore() {
   }
 
 function questionClick() {
-  // chec
+
   if (this.value !== questions[currentQuestionIndex].answer) {
 
     //adding 10 seconds everytime user gets a quastion wrong
@@ -110,7 +110,6 @@ function questionClick() {
     responseEl.style.color = "green";
   }
 
-  // flash right/wrong feedback
   responseEl.setAttribute("class", "response");
   setTimeout(function() {
     responseEl.setAttribute("class", "hide response");
@@ -163,7 +162,7 @@ function checkInitialValues(event) {
 initialsEl.onkeyup = checkInitialValues;
 
 startBtn.onclick = startQuiz;
-// submit initials
+// submit initials the loading the score page.
 document.getElementById("submit-button").addEventListener("click",function(){
     saveScore();
 })
