@@ -11,10 +11,10 @@ See acceptance criteria for the Challenge Below
 * Clicking start Quiz button the timer countdown starts and presented with question with answers
 
 * Once answer a question
-![user answered the question correct](assets/images/correct-answer)
+![user answered the question correct](assets/images/correct-answer.png)
 
 * Presented with another Question
-![User is presented with another question](assets/images/next.png)
+![User is presented with another question](assets/images/next-question.png)
 
 * If user get the question wrong
 ![User provided a wrong Answer](assets/images/wrong-answer.png)
@@ -22,10 +22,12 @@ See acceptance criteria for the Challenge Below
 * Time should be deducted from the total count in this case is 10 seconds
 ![Timer count down](assets/images/timer-countdown.png)
 
-
 * Oce all Questions are answered or timer reaches 0
+
 * Game is over 
+
 * When game is over I can save my initials and score
+![Final score](assets/images/final-score.png)
 
 
 
