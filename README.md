@@ -8,6 +8,8 @@ See acceptance criteria for the Challenge Below
 
 * Create a Code quiz program
 
+![Code Quiz Challenge](assets/images/coding-quiz-challenge.png)
+
 * Clicking start Quiz button the timer countdown starts and presented with question with answers
 
 * Once answer a question
@@ -27,7 +29,7 @@ See acceptance criteria for the Challenge Below
 * Game is over 
 
 * When game is over I can save my initials and score
-![Final score](assets/images/final-score.png)
+![Final score](assets/images/High-Score.png)
 
 
 
